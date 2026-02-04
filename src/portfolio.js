@@ -246,32 +246,6 @@ const achievementSection = {
       ]
     },
     {
-      title: "Internship Opportunity Summit",
-      subtitle: "Öğrenci Kariyeri • Skills: Digital Marketing",
-      image: require("./assets/images/ogrenciKariyeri.webp"),
-      imageAlt: "Öğrenci Kariyeri",
-      footerLink: [
-        {
-          name: "View Certificate",
-          url: "https://globallycheck.com/CertificateRepo/ISH2997A5C3.jpg"
-        }
-      ]
-    },
-
-    {
-      title: "DevXperience",
-      subtitle: "Talentcoders",
-      image: require("./assets/images/talentcoders.webp"),
-      imageAlt: "Talentcoders",
-      footerLink: [
-        {
-          name: "View Certificate",
-          url: "https://globallycheck.com/CertificateRepo/DEV44478DB0.jpg"
-        }
-      ]
-    },
-
-    {
       title: "Software Technologies and Artificial Intelligence",
       subtitle:
         "GEN Academy • Skills: Software Development, Artificial Intelligence",
@@ -296,6 +270,31 @@ const achievementSection = {
           url: "https://globallycheck.com/CertificateRepo/GENDDC63ED8.jpg"
         }
       ]
+    },
+    {
+      title: "Internship Opportunity Summit",
+      subtitle: "Öğrenci Kariyeri • Skills: Digital Marketing",
+      image: require("./assets/images/ogrenciKariyeri.webp"),
+      imageAlt: "Öğrenci Kariyeri",
+      footerLink: [
+        {
+          name: "View Certificate",
+          url: "https://globallycheck.com/CertificateRepo/ISH2997A5C3.jpg"
+        }
+      ]
+    },
+
+    {
+      title: "DevXperience",
+      subtitle: "Talentcoders",
+      image: require("./assets/images/talentcoders.webp"),
+      imageAlt: "Talentcoders",
+      footerLink: [
+        {
+          name: "View Certificate",
+          url: "https://globallycheck.com/CertificateRepo/DEV44478DB0.jpg"
+        }
+      ]
     }
   ],
   display: true
@@ -307,9 +306,9 @@ const blogSection = {
   display: false
 };
 
-const talkSection = { display: false };
-const podcastSection = { display: false };
-const twitterDetails = { display: false };
+const talkSection = {display: false};
+const podcastSection = {display: false};
+const twitterDetails = {display: false};
 const resumeSection = {
   title: "Resume",
   subtitle: "Feel free to download my resume",
