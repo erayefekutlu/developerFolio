@@ -18,37 +18,40 @@
   line-height: 1.5rem;
 }
 .project-card {
-  display: flex;
-  flex-direction: column;
   background-color: $lightBackground2;
+  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
   padding: 1.5rem;
   border-radius: 10px;
   border: 1px solid $lightBorder1;
-  justify-content: center;
-}
-.project-card-light {
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.project-card-dark {
-  box-shadow: 0px 10px 30px -15px $darkBoxShadow;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.25s ease;
-}
-
 .project-detail {
   text-align: center;
 }
-.project-card-light:hover {
+
+.project-card:hover {
   box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
 }
-.project-card-dark:hover {
-  box-shadow: 0px 20px 30px -10px $darkBoxShadow;
+
+.dark-mode.project-card {
+  background-color: $darkBackground;
 }
+
+.dark-mode.project-card:hover {
+  box-shadow: $achievementCertificateCardHoverDark 0px 20px 30px -10px;
+}
+
+.dark-mode .card-title {
+  color: $textColorDark;
+}
+
+.dark-mode .card-subtitle {
+  color: $subTitle;
+}
+
 .project-image {
   position: relative;
   height: 250px;

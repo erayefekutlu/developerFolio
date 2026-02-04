@@ -58,7 +58,6 @@ const Main = () => {
             <StackProgress />
             <Education />
             <WorkExperience />
-            <Projects />
             <Suspense fallback={<div />}>
               <StartupProject />
             </Suspense>

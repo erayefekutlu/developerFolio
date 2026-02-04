@@ -37,11 +37,7 @@ export default function StartupProject() {
               return (
                 <div
                   key={i}
-                  className={
-                    isDark
-                      ? "dark-mode project-card project-card-dark"
-                      : "project-card project-card-light"
-                  }
+                  className={isDark ? "dark-mode project-card" : "project-card"}
                 >
                   {project.image ? (
                     <div className="project-image">

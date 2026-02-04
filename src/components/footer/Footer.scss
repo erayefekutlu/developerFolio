@@ -5,8 +5,25 @@
   color: $subTitle !important;
 }
 
+.footer-text a {
+  color: $buttonColor !important;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  color: $buttonHover !important;
+}
+
 .dark-mode {
   color: $textColorDark !important;
+}
+
+.dark-mode a {
+  color: $textColorDark !important;
+}
+
+.dark-mode a:hover {
+  color: $buttonColor !important;
 }
 
 .footer-div {
