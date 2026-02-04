@@ -97,7 +97,7 @@ const educationInfo = {
   schools: [
     {
       schoolName: "Ankara Bilim Üniversitesi",
-      logo: require("./assets/images/abuLogo.png"), // logo ekleyince bu satır çalışır
+      logo: require("./assets/images/abuLogo.webp"), // logo ekleyince bu satır çalışır
       subHeader: "BSc in Software Engineering (English)",
       duration: "2024 - 2029 (Expected)",
       desc: "Software Engineering student focusing on backend development. Particularly interested in Java through the department curriculum.",
