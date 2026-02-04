@@ -24,6 +24,8 @@ export default function Skills() {
               <img
                 alt="Man Working"
                 src={developerActivity}
+                width="1035"
+                height="832"
               ></img>
             )}
           </div>

@@ -57,7 +57,12 @@ export default function Greeting() {
             {illustration.animated ? (
               <DisplayLottie animationData={landingPerson} />
             ) : (
-              <img alt="man sitting on table" src={manOnTable} />
+              <img
+                alt="man sitting on table"
+                src={manOnTable}
+                width="996"
+                height="828"
+              />
             )}
           </div>
         </div>

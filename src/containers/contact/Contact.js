@@ -60,6 +60,8 @@ export default function Contact() {
               <img
                 alt="Man working"
                 src={contactMailDark}
+                width="1090"
+                height="823"
               ></img>
             )}
           </div>

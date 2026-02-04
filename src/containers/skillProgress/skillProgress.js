@@ -35,6 +35,8 @@ export default function StackProgress() {
               <img
                 alt="Skills"
                 src={skillImage}
+                width="647"
+                height="632"
               />
             )}
           </div>
