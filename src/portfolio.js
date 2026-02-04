@@ -35,7 +35,6 @@ const socialMediaLinks = {
   github: "https://github.com/erayefekutlu",
   linkedin: "https://www.linkedin.com/in/erayefekutlu/",
   mail: "my@erayefekutlu.com",
-  R10: "https://www.r10.net/profil/157402-erayefe.html",
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
   display: true // Set true to display this section, defaults to false
