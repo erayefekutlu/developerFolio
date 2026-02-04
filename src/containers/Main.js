@@ -2,6 +2,11 @@ import React, {useEffect, useState, lazy, Suspense} from "react";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
 import Skills from "./skills/Skills";
+import StackProgress from "./skillProgress/skillProgress";
+import Education from "./education/Education";
+import WorkExperience from "./workExperience/WorkExperience";
+import Projects from "./projects/Projects";
+import Achievement from "./achievement/Achievement";
 import Footer from "../components/footer/Footer";
 import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
@@ -9,13 +14,8 @@ import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 import "./Main.scss";
 
-// Lazy load non-critical components
-const StackProgress = lazy(() => import("./skillProgress/skillProgress"));
-const Education = lazy(() => import("./education/Education"));
-const WorkExperience = lazy(() => import("./workExperience/WorkExperience"));
-const Projects = lazy(() => import("./projects/Projects"));
+// Lazy load only non-visual components
 const StartupProject = lazy(() => import("./StartupProjects/StartupProject"));
-const Achievement = lazy(() => import("./achievement/Achievement"));
 const Blogs = lazy(() => import("./blogs/Blogs"));
 const Talks = lazy(() => import("./talks/Talks"));
 const Podcast = lazy(() => import("./podcast/Podcast"));
@@ -55,13 +55,15 @@ const Main = () => {
             <Header />
             <Greeting />
             <Skills />
+            <StackProgress />
+            <Education />
+            <WorkExperience />
+            <Projects />
             <Suspense fallback={<div />}>
-              <StackProgress />
-              <Education />
-              <WorkExperience />
-              <Projects />
               <StartupProject />
-              <Achievement />
+            </Suspense>
+            <Achievement />
+            <Suspense fallback={<div />}>
               <Blogs />
               <Talks />
               <Twitter />
