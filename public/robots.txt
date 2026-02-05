@@ -1,2 +1,9 @@
 # https://www.robotstxt.org/robotstxt.html
+# Eray Efe Kutlu Portfolio - SEO Optimized
+
 User-agent: *
+Allow: /
+Disallow: /static/
+
+# Sitemap location
+Sitemap: https://erayefekutlu.com/sitemap.xml
