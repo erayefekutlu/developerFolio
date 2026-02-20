@@ -160,6 +160,18 @@ const bigProjects = {
     "Some of my web applications built with data processing and real-world integration",
   projects: [
     {
+      image: require("./assets/images/smart-tv-local-api.webp"),
+      projectName: "Smart TV Local API",
+      projectDesc:
+        "An unofficial, local network (WSS) API client for controlling smart TVs via PHP and Python. Built for home automation interoperability.",
+      footerLink: [
+        {
+          name: "Source Code (GitHub)",
+          url: "https://github.com/erayefekutlu/smart-tv-local-api"
+        }
+      ]
+    },
+    {
       image: require("./assets/images/projectPharmacy.webp"),
       projectName: "On-duty Pharmacy API (Turkey)",
       projectDesc:
