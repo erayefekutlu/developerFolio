@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext} from "react";
 import "./Project.scss";
 import Button from "../../components/button/Button";
-import {openSource, socialMediaLinks} from "../../portfolio";
+import {openSource, socialMediaLinks, uiText} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 import GithubRepoCard from "../../components/githubRepoCard/GithubRepoCard";
 
@@ -41,7 +41,7 @@ export default function Projects() {
   ) {
     return (
       <div className="main" id="opensource">
-        <h1 className="project-title">Open Source Projects</h1>
+        <h1 className="project-title">{uiText.headings.openSourceProjects}</h1>
         <div className="repo-cards-div-main">
           {repo.map((v, i) => {
             if (!v) {
@@ -55,7 +55,7 @@ export default function Projects() {
           })}
         </div>
         <Button
-          text={"More Projects"}
+          text={uiText.actions.moreProjects}
           className="project-button"
           href={socialMediaLinks.github}
           newTab={true}

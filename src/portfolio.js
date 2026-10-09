@@ -15,6 +15,67 @@ const language =
 const translate = (turkish, english) =>
   language === "tr" ? turkish : english;
 
+// Shared interface labels used outside the content sections below.
+const uiText = {
+  language,
+  navigation: {
+    skills: translate("Yetenekler", "Skills"),
+    workExperience: translate("Deneyimler", "Work Experience"),
+    projects: translate("Projeler", "Projects"),
+    achievements: translate("Başarılar", "Achievements"),
+    blogs: translate("Bloglar", "Blogs"),
+    talks: translate("Konuşmalar", "Talks"),
+    resume: translate("Özgeçmiş", "Resume"),
+    contact: translate("İletişim", "Contact Me")
+  },
+  greeting: {
+    contact: translate("İletişime Geç", "Contact Me"),
+    downloadResume: translate("Özgeçmişimi İndir", "Download My Resume")
+  },
+  headings: {
+    proficiency: translate("Yetkinlikler", "Proficiency"),
+    education: translate("Eğitim", "Education"),
+    experiences: translate("Deneyimler", "Experiences"),
+    openSourceProjects: translate("Açık Kaynak Projeler", "Open Source Projects"),
+    reachOut: translate("İletişime Geçin", "Reach Out to Me!")
+  },
+  actions: {
+    moreProjects: translate("Daha Fazla Proje", "More Projects"),
+    goToTop: translate("Sayfanın başına dön", "Go to Top")
+  },
+  footer: {
+    madeWith: translate(
+      "DeveloperFolio Ekibi tarafından ❤️ ile hazırlandı",
+      "Made with ❤️ by DeveloperFolio Team"
+    ),
+    themeBy: translate("Tema:", "Theme by")
+  },
+  twitter: {
+    unavailable: translate(
+      "Yüklenemedi. Gizlilik koruması ayarlarınızı kontrol edin.",
+      "Can't load? Check privacy protection settings."
+    )
+  },
+  profile: {
+    openForOpportunities: translate(
+      "Yeni fırsatlara açık",
+      "Open for opportunities"
+    ),
+    yes: translate("Evet", "Yes"),
+    no: translate("Hayır", "No")
+  },
+  seo: {
+    title: translate(
+      "Eray Efe Kutlu | Backend Geliştirici ve Yazılım Mühendisi",
+      "Eray Efe Kutlu | Backend Developer & Software Engineer"
+    ),
+    description: translate(
+      "PHP, Python ve Java alanlarında uzmanlaşan backend geliştirici. Web scraping, veri işleme, MySQL veritabanı tasarımı ve sunucu yönetimi deneyimi.",
+      "Backend developer specializing in PHP, Python, and Java. Experienced in web scraping, data processing, MySQL database design, and server administration."
+    )
+  }
+};
+
 // Splash Screen
 
 const splashScreen = {
@@ -34,8 +95,8 @@ const greeting = {
   title: translate("Merhaba, ben Eray", "Hi, I'm Eray"),
   subTitle: emoji(
     translate(
-      "TÜBİTAK, TEKNOFEST ve BTK Hackathon'da (ilk 10) deneyim kazanmış; backend ve veri odaklı bir Yazılım Mühendisliği öğrencisiyim. PHP, Java ve Python ile servisler geliştiriyor; MySQL ile veritabanı tasarımı ve optimizasyonu yapıyorum. Web scraping ile ham verileri ölçeklenebilir JSON yapılarına dönüştürüyor, farklı alanlardaki projelerimi uçtan uca sanal sunucularda canlıya alıyorum.",
-      "I am a Software Engineering student focused on backend development and data, with experience at TÜBİTAK, TEKNOFEST, and a top-10 finish in the BTK Hackathon. I build services with PHP, Java, and Python; design and optimize MySQL databases; turn raw data into scalable JSON structures through web scraping; and deploy my end-to-end projects to virtual servers."
+      "TÜBİTAK ve TEKNOFEST deneyimine sahip, BTK Akademi Hackathon 2026 finalisti; backend ve veri odaklı bir Yazılım Mühendisliği öğrencisiyim. PHP, Java ve Python ile servisler geliştiriyor; MySQL ile veritabanı tasarımı ve optimizasyonu yapıyorum. Web scraping ile ham verileri ölçeklenebilir JSON yapılarına dönüştürüyor, farklı alanlardaki projelerimi uçtan uca sanal sunucularda canlıya alıyorum.",
+      "I am a backend- and data-focused Software Engineering student with experience at TÜBİTAK and TEKNOFEST, and a finalist in the BTK Akademi Hackathon 2026. I build services with PHP, Java, and Python; design and optimize MySQL databases; turn raw data into scalable JSON structures through web scraping; and deploy my end-to-end projects to virtual servers."
     )
   ),
   resumeLink: "", // Set to empty to hide the button
@@ -422,6 +483,7 @@ const contactInfo = {
 const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
 
 export {
+  uiText,
   illustration,
   greeting,
   socialMediaLinks,

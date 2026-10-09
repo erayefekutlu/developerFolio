@@ -11,7 +11,8 @@ import {
   blogSection,
   talkSection,
   achievementSection,
-  resumeSection
+  resumeSection,
+  uiText
 } from "../../portfolio";
 
 function Header() {
@@ -43,41 +44,41 @@ function Header() {
         <ul className={isDark ? "dark-menu menu" : "menu"}>
           {viewSkills && (
             <li>
-              <a href="#skills">Skills</a>
+              <a href="#skills">{uiText.navigation.skills}</a>
             </li>
           )}
           {viewExperience && (
             <li>
-              <a href="#experience">Work Experiences</a>
+              <a href="#experience">{uiText.navigation.workExperience}</a>
             </li>
           )}
           {viewOpenSource && (
             <li>
-              <a href="#projects">Projects</a>
+              <a href="#projects">{uiText.navigation.projects}</a>
             </li>
           )}
           {viewAchievement && (
             <li>
-              <a href="#achievements">Achievements</a>
+              <a href="#achievements">{uiText.navigation.achievements}</a>
             </li>
           )}
           {viewBlog && (
             <li>
-              <a href="#blogs">Blogs</a>
+              <a href="#blogs">{uiText.navigation.blogs}</a>
             </li>
           )}
           {viewTalks && (
             <li>
-              <a href="#talks">Talks</a>
+              <a href="#talks">{uiText.navigation.talks}</a>
             </li>
           )}
           {viewResume && (
             <li>
-              <a href="#resume">Resume</a>
+              <a href="#resume">{uiText.navigation.resume}</a>
             </li>
           )}
           <li>
-            <a href="#contact">Contact Me</a>
+            <a href="#contact">{uiText.navigation.contact}</a>
           </li>
           <li>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
