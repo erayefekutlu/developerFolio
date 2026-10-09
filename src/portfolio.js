@@ -369,9 +369,27 @@ const achievementSection = {
   ),
 
   achievementsCards: [
+        {
+      title: translate(
+        "BTK Akademi Hackathon 2026",
+        "BTK Akademi Hackathon 2026"
+      ),
+      subtitle: translate(
+        "BTK Akademi • Yetenekler: Yazılım Geliştirme, Büyük Veri & Yapay Zekâ",
+        "BTK Akademi • Skills: Software Development, Big Data & Artificial Intelligence"
+      ),
+      image: require("./assets/images/hackathon.webp"),
+      imageAlt: "BTK Akademi Hackathon 2026",
+      footerLink: [
+        {
+          name: translate("Sertifikayı Görüntüle", "View Certificate"),
+          url: "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=2O4bhJw8VD1"
+        }
+      ]
+    },
     {
       title: translate(
-        "BTK Akademi – Yazılım ve Teknoloji Eğitimleri",
+        "BTK Akademi –  Teknoloji Eğitimleri",
         "BTK Akademi – Software & Technology Trainings"
       ),
       subtitle: translate(
@@ -395,6 +413,28 @@ const achievementSection = {
         {
           name: "PHP",
           url: "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=qKrhmg1ZDD"
+        },
+               {
+          name: "JAVA ile Programlamaya Giriş",
+          url: "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=qKrheo2oKm"
+        }
+      ]
+    },
+    {
+      title: translate(
+        "Vodafone Yaz Kampüsü",
+        "Vodafone Summer Campus"
+      ),
+      subtitle: translate(
+        "Vodafone Türkiye • Yetenekler: Yazılım Geliştirme, Büyük Veri & Yapay Zekâ",
+        "Vodafone Türkiye • Skills: Software Development, Big Data & Artificial Intelligence"
+      ),
+      image: require("./assets/images/vodafone.webp"),
+      imageAlt: "Vodafone",
+      footerLink: [
+        {
+          name: translate("Sertifikayı Görüntüle", "View Certificate"),
+          url: "https://anbeankampus.co/sertifika/aa753c1e-ef1e-41c9"
         }
       ]
     },
