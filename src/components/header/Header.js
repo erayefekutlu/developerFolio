@@ -24,6 +24,16 @@ function Header() {
   const viewBlog = blogSection.display;
   const viewTalks = talkSection.display;
   const viewResume = resumeSection.display;
+  const changeLanguage = event => {
+    const selectedLanguage = event.target.value;
+    try {
+      window.localStorage.setItem("portfolioLanguage", selectedLanguage);
+    } catch (error) {
+      // The next visit falls back to automatic browser-language detection.
+    }
+    document.documentElement.lang = selectedLanguage;
+    window.location.reload();
+  };
 
   return (
     <Headroom>
@@ -79,6 +89,17 @@ function Header() {
           )}
           <li>
             <a href="#contact">{uiText.navigation.contact}</a>
+          </li>
+          <li className="language-menu-item">
+            <select
+              aria-label={uiText.languageSelector.label}
+              className="language-selector"
+              onChange={changeLanguage}
+              value={uiText.language}
+            >
+              <option value="tr">TR</option>
+              <option value="en">EN</option>
+            </select>
           </li>
           <li>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

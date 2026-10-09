@@ -5,13 +5,27 @@
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
 
-// Content is selected from the visitor's browser language. Pass a language to
-// `translate` when adding a language selector later; "tr" and "en" are the
-// supported portfolio languages.
-const language =
-  typeof navigator !== "undefined" && navigator.language.startsWith("tr")
-    ? "tr"
-    : "en";
+// An explicit choice takes precedence; otherwise, use the browser language.
+const getPortfolioLanguage = () => {
+  if (typeof window === "undefined") {
+    return "en";
+  }
+
+  let savedLanguage = null;
+  try {
+    savedLanguage = window.localStorage.getItem("portfolioLanguage");
+  } catch (error) {
+    // Browser-language detection still works when storage is unavailable.
+  }
+  if (savedLanguage === "tr" || savedLanguage === "en") {
+    return savedLanguage;
+  }
+
+  const browserLanguage = window.navigator.language || "en";
+  return browserLanguage.toLowerCase().startsWith("tr") ? "tr" : "en";
+};
+
+const language = getPortfolioLanguage();
 const translate = (turkish, english) =>
   language === "tr" ? turkish : english;
 
@@ -31,6 +45,9 @@ const uiText = {
   greeting: {
     contact: translate("İletişime Geç", "Contact Me"),
     downloadResume: translate("Özgeçmişimi İndir", "Download My Resume")
+  },
+  languageSelector: {
+    label: translate("Dil seçimi", "Language selector")
   },
   headings: {
     proficiency: translate("Yetkinlikler", "Proficiency"),

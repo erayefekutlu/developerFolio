@@ -1,7 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
+    <script>
+      (function () {
+        var savedLanguage = null;
+        try {
+          savedLanguage = window.localStorage.getItem("portfolioLanguage");
+        } catch (error) {
+          // Browser-language detection is used when storage is unavailable.
+        }
+        var browserLanguage = (navigator.language || "en").toLowerCase();
+        var language =
+          savedLanguage === "tr" || savedLanguage === "en"
+            ? savedLanguage
+            : browserLanguage.indexOf("tr") === 0
+              ? "tr"
+              : "en";
+        document.documentElement.lang = language;
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
     <!-- SEO Meta Tags -->
