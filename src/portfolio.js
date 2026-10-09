@@ -26,8 +26,7 @@ const getPortfolioLanguage = () => {
 };
 
 const language = getPortfolioLanguage();
-const translate = (turkish, english) =>
-  language === "tr" ? turkish : english;
+const translate = (turkish, english) => (language === "tr" ? turkish : english);
 
 // Shared interface labels used outside the content sections below.
 const uiText = {
@@ -53,7 +52,10 @@ const uiText = {
     proficiency: translate("Yetkinlikler", "Proficiency"),
     education: translate("Eğitim", "Education"),
     experiences: translate("Deneyimler", "Experiences"),
-    openSourceProjects: translate("Açık Kaynak Projeler", "Open Source Projects"),
+    openSourceProjects: translate(
+      "Açık Kaynak Projeler",
+      "Open Source Projects"
+    ),
     reachOut: translate("İletişime Geçin", "Reach Out to Me!")
   },
   actions: {
@@ -238,23 +240,38 @@ const techStack = {
   viewSkillBars: true,
   experience: [
     {
-      Stack: translate("Web Scraping ve Veri İşleme", "Web Scraping & Data Processing"),
+      Stack: translate(
+        "Web Scraping ve Veri İşleme",
+        "Web Scraping & Data Processing"
+      ),
       progressPercentage: "85%"
     },
     {
-      Stack: translate("Backend Geliştirme (API'ler)", "Backend Development (APIs)"),
+      Stack: translate(
+        "Backend Geliştirme (API'ler)",
+        "Backend Development (APIs)"
+      ),
       progressPercentage: "80%"
     },
     {
-      Stack: translate("Veritabanları (MySQL / SQL)", "Databases (MySQL / SQL)"),
+      Stack: translate(
+        "Veritabanları (MySQL / SQL)",
+        "Databases (MySQL / SQL)"
+      ),
       progressPercentage: "75%"
     },
     {
-      Stack: translate("Linux / Sunucu ve Yayınlama", "Linux / Server & Deployment"),
+      Stack: translate(
+        "Linux / Sunucu ve Yayınlama",
+        "Linux / Server & Deployment"
+      ),
       progressPercentage: "70%"
     },
     {
-      Stack: translate("Frontend (Bootstrap tabanlı)", "Frontend (Bootstrap-based)"),
+      Stack: translate(
+        "Frontend (Bootstrap tabanlı)",
+        "Frontend (Bootstrap-based)"
+      ),
       progressPercentage: "50%"
     }
   ],
@@ -286,7 +303,10 @@ const bigProjects = {
   projects: [
     {
       image: require("./assets/images/projectPharmacy.webp"),
-      projectName: translate("Nöbetçi Eczane API'si (Türkiye)", "On-duty Pharmacy API (Turkey)"),
+      projectName: translate(
+        "Nöbetçi Eczane API'si (Türkiye)",
+        "On-duty Pharmacy API (Turkey)"
+      ),
       projectDesc: translate(
         "Nöbetçi eczane verilerini herkese açık bir API üzerinden ücretsiz sunuyorum. Veriler scraping süreçleriyle toplanıp işleniyor ve JSON olarak servis ediliyor. Proje; güvenilirlik, önbellekleme ve sade API yanıtlarına odaklanıyor.",
         "I provide free on-duty pharmacy data through a public API. The data is collected and processed through scraping pipelines, then served as JSON, with a focus on reliability, caching, and clean responses."
@@ -361,7 +381,10 @@ const bigProjects = {
 
 const achievementSection = {
   title: emoji(
-    translate("Başarılar ve Sertifikalar 🏆", "Achievements & Certifications 🏆")
+    translate(
+      "Başarılar ve Sertifikalar 🏆",
+      "Achievements & Certifications 🏆"
+    )
   ),
   subtitle: translate(
     "Yazılım geliştirme, güvenlik ve teknoloji odaklı doğrulanabilir sertifika ve eğitimler",
@@ -369,14 +392,14 @@ const achievementSection = {
   ),
 
   achievementsCards: [
-        {
+    {
       title: translate(
         "BTK Akademi Hackathon 2026",
         "BTK Akademi Hackathon 2026"
       ),
       subtitle: translate(
-        "BTK Akademi • Yetenekler: Yazılım Geliştirme, Büyük Veri & Yapay Zekâ",
-        "BTK Akademi • Skills: Software Development, Big Data & Artificial Intelligence"
+        "BTK Akademi Hackathon 2026'da yapay zeka destekli fon fiyat tahmin projesiyle finale kaldım. Proje, finansal verileri işleyip tahminler üreten bir web uygulaması olarak tasarlandı.",
+        "BTK Akademi Hackathon 2026 finalist with an AI-powered fund price prediction project. The project was designed as a web application that processes financial data and generates predictions."
       ),
       image: require("./assets/images/hackathon.webp"),
       imageAlt: "BTK Akademi Hackathon 2026",
@@ -384,6 +407,10 @@ const achievementSection = {
         {
           name: translate("Sertifikayı Görüntüle", "View Certificate"),
           url: "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=2O4bhJw8VD1"
+        },
+        {
+          name: translate("Linkedin'de görüntüle", "View on LinkedIn"),
+          url: "https://www.linkedin.com/posts/erayefekutlu_btkakademi-hackathon-fintech-ugcPost-7468762991488884738-Sy8e/?highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7468763151652577280&highlightedUpdateType=SOCIAL_SHARE&origin=SOCIAL_SHARE&utm_source=share&utm_medium=member_desktop&rcm=ACoAAFOuNxIBfRI9L5TxbWOMvO28htu_n25gujs"
         }
       ]
     },
@@ -400,7 +427,10 @@ const achievementSection = {
       imageAlt: "BTK Akademi",
       footerLink: [
         {
-          name: translate("HTML5 ile Web Geliştirme", "Web Development with HTML5"),
+          name: translate(
+            "HTML5 ile Web Geliştirme",
+            "Web Development with HTML5"
+          ),
           url: "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=dx1hA7DOpE"
         },
         {
@@ -414,19 +444,16 @@ const achievementSection = {
           name: "PHP",
           url: "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=qKrhmg1ZDD"
         },
-               {
+        {
           name: "JAVA ile Programlamaya Giriş",
           url: "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=qKrheo2oKm"
         }
       ]
     },
     {
-      title: translate(
-        "Vodafone Yaz Kampüsü",
-        "Vodafone Summer Campus"
-      ),
+      title: translate("Vodafone Yaz Kampüsü", "Vodafone Summer Campus"),
       subtitle: translate(
-        "Vodafone Türkiye • Yetenekler: Yazılım Geliştirme, Büyük Veri & Yapay Zekâ",
+        "Vodafone & Anbean iş birliğiyle düzenlenen yaz kampüsünde yazılım geliştirme, büyük veri ve yapay zekâ konularında eğitim aldım.",
         "Vodafone Türkiye • Skills: Software Development, Big Data & Artificial Intelligence"
       ),
       image: require("./assets/images/vodafone.webp"),
@@ -435,6 +462,10 @@ const achievementSection = {
         {
           name: translate("Sertifikayı Görüntüle", "View Certificate"),
           url: "https://anbeankampus.co/sertifika/aa753c1e-ef1e-41c9"
+        },
+        {
+          name: translate("Linkedin'de görüntüle", "View on LinkedIn"),
+          url: "https://www.linkedin.com/posts/erayefekutlu_eray-efe-kutlu-vodafone-yaz-kamp%C3%BCs%C3%BC-ugcPost-7476363839136256000-ok7P/?highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7476363840511741952&highlightedUpdateType=SOCIAL_SHARE&origin=SOCIAL_SHARE&utm_source=share&utm_medium=member_desktop&rcm=ACoAAFOuNxIBfRI9L5TxbWOMvO28htu_n25gujs"
         }
       ]
     },
