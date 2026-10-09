@@ -198,8 +198,8 @@ const educationInfo = {
       ),
       duration: translate("2024 - 2029 (Beklenen)", "2024 - 2029 (Expected)"),
       desc: translate(
-        "Backend geliştirmeye odaklanan bir Yazılım Mühendisliği öğrencisiyim. Bölüm müfredatı kapsamında özellikle Java ile ilgileniyorum.",
-        "Software Engineering student focused on backend development, with a particular interest in Java through the department curriculum."
+        "Backend geliştirmeye odaklanan bir Yazılım Mühendisliği öğrencisiyim. Bölüm müfredatı kapsamında özellikle Python, Java ve C++ ile ilgileniyorum.",
+        "Software Engineering student focused on backend development, with a particular interest in Python, Java, and C++ through the department curriculum."
       ),
       descBullets: [
         translate(
@@ -207,8 +207,8 @@ const educationInfo = {
           "Backend-focused learning path: APIs, databases, and data processing"
         ),
         translate(
-          "Derslerin yanında Java ve uygulamalı projelere güçlü ilgi",
-          "Strong interest in Java and practical projects alongside coursework"
+          "Derslerin yanında Python, Java ve C++ ile uygulamalı projelere güçlü ilgi",
+          "Strong interest in Python, Java, and C++ and practical projects alongside coursework"
         )
       ]
     }
