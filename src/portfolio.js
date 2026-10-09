@@ -5,6 +5,16 @@
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
 
+// Content is selected from the visitor's browser language. Pass a language to
+// `translate` when adding a language selector later; "tr" and "en" are the
+// supported portfolio languages.
+const language =
+  typeof navigator !== "undefined" && navigator.language.startsWith("tr")
+    ? "tr"
+    : "en";
+const translate = (turkish, english) =>
+  language === "tr" ? turkish : english;
+
 // Splash Screen
 
 const splashScreen = {
@@ -21,9 +31,12 @@ const illustration = {
 
 const greeting = {
   username: "Eray Efe Kutlu",
-  title: "Hi all, I'm Eray",
+  title: translate("Merhaba, ben Eray", "Hi, I'm Eray"),
   subTitle: emoji(
-    "I am a software developer specializing in backend development within the PHP, Python, and Java ecosystems. I have a solid grasp of the general structure of SQL and am particularly experienced in database design and querying, especially with MySQL. I work in web scraping and data processing, prioritizing the conversion of data into scalable and structured JSON formats. On the frontend side, I use HTML, CSS, JavaScript, and Bootstrap. I have experience with deployment and basic system administration on Ubuntu-based servers using tools like CloudPanel."
+    translate(
+      "TÜBİTAK, TEKNOFEST ve BTK Hackathon'da (ilk 10) deneyim kazanmış; backend ve veri odaklı bir Yazılım Mühendisliği öğrencisiyim. PHP, Java ve Python ile servisler geliştiriyor; MySQL ile veritabanı tasarımı ve optimizasyonu yapıyorum. Web scraping ile ham verileri ölçeklenebilir JSON yapılarına dönüştürüyor, farklı alanlardaki projelerimi uçtan uca sanal sunucularda canlıya alıyorum.",
+      "I am a Software Engineering student focused on backend development and data, with experience at TÜBİTAK, TEKNOFEST, and a top-10 finish in the BTK Hackathon. I build services with PHP, Java, and Python; design and optimize MySQL databases; turn raw data into scalable JSON structures through web scraping; and deploy my end-to-end projects to virtual servers."
+    )
   ),
   resumeLink: "", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
@@ -43,27 +56,47 @@ const socialMediaLinks = {
 // Skills Section
 
 const skillsSection = {
-  title: "What I do",
-  subTitle:
-    "BACKEND-FOCUSED DEVELOPER WITH SCRAPING, API & LINUX SERVER EXPERIENCE",
+  title: translate("Neler Yapıyorum", "What I Do"),
+  subTitle: translate(
+    "WEB SCRAPING, API VE LINUX SUNUCU DENEYİMİNE SAHİP BACKEND ODAKLI GELİŞTİRİCİ",
+    "BACKEND-FOCUSED DEVELOPER WITH SCRAPING, API & LINUX SERVER EXPERIENCE"
+  ),
   skills: [
     emoji(
-      "⚡ Build and publish REST APIs (public/private) and integrate scraped data into services & bots"
+      translate(
+        "⚡ Herkese açık/özel REST API'ler geliştiriyor ve yayımlıyor; scraping ile elde edilen verileri servislere ve botlara entegre ediyorum.",
+        "⚡ Build and publish public/private REST APIs, and integrate scraped data into services and bots."
+      )
     ),
     emoji(
-      "⚡ Work with MySQL: schema design, writing queries, and optimizing frequently filtered columns with indexes"
+      translate(
+        "⚡ MySQL ile şema tasarlıyor, sorgular yazıyor ve sık filtrelenen sütunları indekslerle optimize ediyorum.",
+        "⚡ Work with MySQL: design schemas, write queries, and optimize frequently filtered columns with indexes."
+      )
     ),
     emoji(
-      "⚡ Web scraping with PHP (cURL + Simple HTML DOM); also experienced with Python tooling (aiohttp, Playwright, Selenium, BeautifulSoup) with AI assistance"
+      translate(
+        "⚡ PHP (cURL + Simple HTML DOM) ile web scraping yapıyor; Python araçlarıyla da (aiohttp, Playwright, Selenium, BeautifulSoup) çalışıyorum.",
+        "⚡ Perform web scraping with PHP (cURL + Simple HTML DOM) and work with Python tools including aiohttp, Playwright, Selenium, and BeautifulSoup."
+      )
     ),
     emoji(
-      "⚡ Data processing in JSON: store flexible/large structures as JSON and serve API responses in JSON"
+      translate(
+        "⚡ Esnek ve büyük veri yapılarını JSON olarak saklıyor; API yanıtlarını JSON formatında sunuyorum.",
+        "⚡ Process data in JSON: store flexible, large structures as JSON and serve API responses in JSON."
+      )
     ),
     emoji(
-      "⚡ Deploy websites on Ubuntu via CloudPanel (incl. WordPress), basic security hardening (ports, rate limits, Fail2ban)"
+      translate(
+        "⚡ Web sitelerini CloudPanel üzerinden Ubuntu'ya (WordPress dahil) yayımlıyor; portlar, hız limitleri ve Fail2ban ile temel güvenlik sıkılaştırması yapıyorum.",
+        "⚡ Deploy websites on Ubuntu through CloudPanel, including WordPress, and apply basic security hardening with ports, rate limits, and Fail2ban."
+      )
     ),
     emoji(
-      "⚡ Linux monitoring & protection: track resource usage (htop/nload) and mitigate Layer-7 attacks using Cloudflare-focused access patterns"
+      translate(
+        "⚡ Linux sistemlerini izliyor ve koruyorum: kaynak kullanımını htop/nload ile takip ediyor, Cloudflare odaklı erişim kurallarıyla Katman 7 saldırılarını azaltıyorum.",
+        "⚡ Monitor and protect Linux systems: track resource usage with htop/nload and mitigate Layer-7 attacks with Cloudflare-focused access rules."
+      )
     )
   ],
 
@@ -98,12 +131,24 @@ const educationInfo = {
     {
       schoolName: "Ankara Bilim Üniversitesi",
       logo: require("./assets/images/abuLogo.webp"), // logo ekleyince bu satır çalışır
-      subHeader: "BSc in Software Engineering (English)",
-      duration: "2024 - 2029 (Expected)",
-      desc: "Software Engineering student focusing on backend development. Particularly interested in Java through the department curriculum.",
+      subHeader: translate(
+        "Yazılım Mühendisliği Lisans Programı (İngilizce)",
+        "BSc in Software Engineering (English)"
+      ),
+      duration: translate("2024 - 2029 (Beklenen)", "2024 - 2029 (Expected)"),
+      desc: translate(
+        "Backend geliştirmeye odaklanan bir Yazılım Mühendisliği öğrencisiyim. Bölüm müfredatı kapsamında özellikle Java ile ilgileniyorum.",
+        "Software Engineering student focused on backend development, with a particular interest in Java through the department curriculum."
+      ),
       descBullets: [
-        "Backend-focused learning path (APIs, databases, data processing)",
-        "Strong interest in Java and practical projects alongside coursework"
+        translate(
+          "Backend odaklı öğrenme yolu: API'ler, veritabanları ve veri işleme",
+          "Backend-focused learning path: APIs, databases, and data processing"
+        ),
+        translate(
+          "Derslerin yanında Java ve uygulamalı projelere güçlü ilgi",
+          "Strong interest in Java and practical projects alongside coursework"
+        )
       ]
     }
   ]
@@ -115,23 +160,23 @@ const techStack = {
   viewSkillBars: true,
   experience: [
     {
-      Stack: "Web Scraping & Data Processing",
+      Stack: translate("Web Scraping ve Veri İşleme", "Web Scraping & Data Processing"),
       progressPercentage: "85%"
     },
     {
-      Stack: "Backend Development (APIs)",
+      Stack: translate("Backend Geliştirme (API'ler)", "Backend Development (APIs)"),
       progressPercentage: "80%"
     },
     {
-      Stack: "Databases (MySQL / SQL)",
+      Stack: translate("Veritabanları (MySQL / SQL)", "Databases (MySQL / SQL)"),
       progressPercentage: "75%"
     },
     {
-      Stack: "Linux / Server & Deployment",
+      Stack: translate("Linux / Sunucu ve Yayınlama", "Linux / Server & Deployment"),
       progressPercentage: "70%"
     },
     {
-      Stack: "Frontend (Bootstrap-based)",
+      Stack: translate("Frontend (Bootstrap tabanlı)", "Frontend (Bootstrap-based)"),
       progressPercentage: "50%"
     }
   ],
@@ -155,58 +200,77 @@ const openSource = {
 
 // Some big projects you have worked on
 const bigProjects = {
-  title: "Projects",
-  subtitle:
-    "Some of my web applications built with data processing and real-world integration",
+  title: translate("Projeler", "Projects"),
+  subtitle: translate(
+    "Veri işleme ve gerçek dünya entegrasyonlarıyla geliştirdiğim web uygulamalarından bazıları",
+    "Some of my web applications built with data processing and real-world integrations"
+  ),
   projects: [
     {
       image: require("./assets/images/projectPharmacy.webp"),
-      projectName: "On-duty Pharmacy API (Turkey)",
-      projectDesc:
-        "I provide free on-duty pharmacy data via a public API. Data is collected and processed with scraping pipelines and served as JSON. Built with focus on reliability, caching, and clean responses.",
+      projectName: translate("Nöbetçi Eczane API'si (Türkiye)", "On-duty Pharmacy API (Turkey)"),
+      projectDesc: translate(
+        "Nöbetçi eczane verilerini herkese açık bir API üzerinden ücretsiz sunuyorum. Veriler scraping süreçleriyle toplanıp işleniyor ve JSON olarak servis ediliyor. Proje; güvenilirlik, önbellekleme ve sade API yanıtlarına odaklanıyor.",
+        "I provide free on-duty pharmacy data through a public API. The data is collected and processed through scraping pipelines, then served as JSON, with a focus on reliability, caching, and clean responses."
+      ),
       footerLink: [
         {
-          name: "API Endpoint",
+          name: translate("API Uç Noktası", "API Endpoint"),
           url: "https://api.erayefekutlu.com/eczane/<plateNumber>"
         }
       ]
     },
     {
       image: require("./assets/images/projectPharmacy.webp"),
-      projectName: "Cross-platform On-duty Pharmacy App (Flutter)",
-      projectDesc:
-        "A Flutter cross-platform app for finding on-duty pharmacies. Developed with AI assistance; I handled app structure, data integration, and overall implementation flow. Not published yet.",
+      projectName: translate(
+        "Platformlar Arası Nöbetçi Eczane Uygulaması (Flutter)",
+        "Cross-platform On-duty Pharmacy App (Flutter)"
+      ),
+      projectDesc: translate(
+        "Nöbetçi eczaneleri bulmaya yönelik Flutter tabanlı, platformlar arası bir uygulama. Yapay zekâ desteğiyle geliştirildi; uygulama yapısı, veri entegrasyonu ve genel geliştirme akışını ben yönettim. Henüz yayımlanmadı.",
+        "A cross-platform Flutter app for finding on-duty pharmacies. Built with AI assistance; I handled the app structure, data integration, and overall implementation flow. It has not been published yet."
+      ),
       footerLink: [
         {
-          name: "Source Code (GitHub)",
+          name: translate("Kaynak Kod (GitHub)", "Source Code (GitHub)"),
           url: "https://github.com/erayefekutlu/flutter-pharmacy-app"
         }
       ]
     },
     {
       image: require("./assets/images/earthquake.webp"),
-      projectName: "Son Depremler – Türkiye Anlık Deprem Verisi",
-      projectDesc:
-        "A real-time earthquake information web app using AFAD and Kandilli data. It fetches and presents seismic data dynamically, enabling users to track recent earthquakes across Turkey.",
+      projectName: translate(
+        "Son Depremler – Türkiye Anlık Deprem Verisi",
+        "Recent Earthquakes – Real-time Turkey Earthquake Data"
+      ),
+      projectDesc: translate(
+        "AFAD ve Kandilli verilerini kullanan gerçek zamanlı deprem bilgi uygulaması. Sismik verileri dinamik olarak çekip sunarak kullanıcıların Türkiye'deki son depremleri takip etmesini sağlıyor.",
+        "A real-time earthquake information web app using AFAD and Kandilli data. It dynamically fetches and presents seismic data so users can track recent earthquakes across Turkey."
+      ),
       footerLink: [
         {
-          name: "Live Site",
+          name: translate("Canlı Site", "Live Site"),
           url: "https://sondepremler.pages.dev/"
         },
         {
-          name: "GitHub Repo",
+          name: translate("GitHub Deposu", "GitHub Repository"),
           url: "https://github.com/erayefekutlu/son-depremler"
         }
       ]
     },
     {
       image: require("./assets/images/superlig.webp"),
-      projectName: "Süper Lig Şampiyonluk Hesaplayıcı",
-      projectDesc:
-        "An interactive web app for tracking the Turkish Süper Lig table and exploring championship scenarios based on team standings and statistics.",
+      projectName: translate(
+        "Süper Lig Şampiyonluk Hesaplayıcı",
+        "Süper Lig Championship Calculator"
+      ),
+      projectDesc: translate(
+        "Türkiye Süper Lig puan tablosunu takip etmeyi ve takım sıralamaları ile istatistiklerine göre şampiyonluk senaryolarını incelemeyi sağlayan etkileşimli web uygulaması.",
+        "An interactive web app for tracking the Turkish Süper Lig table and exploring championship scenarios based on team standings and statistics."
+      ),
       footerLink: [
         {
-          name: "Live Site",
+          name: translate("Canlı Site", "Live Site"),
           url: "https://superlig.demosoftware.com.tr/"
         }
       ]
@@ -218,24 +282,36 @@ const bigProjects = {
 // Achievement & Certification Section
 
 const achievementSection = {
-  title: emoji("Achievements & Certifications 🏆"),
-  subtitle:
-    "Verified certifications and trainings focused on software development, security, and technology",
+  title: emoji(
+    translate("Başarılar ve Sertifikalar 🏆", "Achievements & Certifications 🏆")
+  ),
+  subtitle: translate(
+    "Yazılım geliştirme, güvenlik ve teknoloji odaklı doğrulanabilir sertifika ve eğitimler",
+    "Verified certifications and trainings focused on software development, security, and technology"
+  ),
 
   achievementsCards: [
     {
-      title: "BTK Akademi – Software & Technology Trainings",
-      subtitle:
-        "Completed multiple certified trainings provided by BTK Akademi, covering software development and technical foundations.",
+      title: translate(
+        "BTK Akademi – Yazılım ve Teknoloji Eğitimleri",
+        "BTK Akademi – Software & Technology Trainings"
+      ),
+      subtitle: translate(
+        "BTK Akademi'nin yazılım geliştirme ve teknik temelleri kapsayan birden fazla sertifikalı eğitimini tamamladım.",
+        "Completed multiple certified BTK Akademi trainings covering software development and technical foundations."
+      ),
       image: require("./assets/images/btk.webp"),
       imageAlt: "BTK Akademi",
       footerLink: [
         {
-          name: "HTML5 ile Web Geliştirme",
+          name: translate("HTML5 ile Web Geliştirme", "Web Development with HTML5"),
           url: "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=dx1hA7DOpE"
         },
         {
-          name: "Veritabanı Saldırıları ve Veritabanı Güvenliği",
+          name: translate(
+            "Veritabanı Saldırıları ve Veritabanı Güvenliği",
+            "Database Attacks and Database Security"
+          ),
           url: "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=qKrhmAnGM8"
         },
         {
@@ -245,39 +321,56 @@ const achievementSection = {
       ]
     },
     {
-      title: "Software Technologies and Artificial Intelligence",
-      subtitle:
-        "GEN Academy • Skills: Software Development, Artificial Intelligence",
+      title: translate(
+        "Yazılım Teknolojileri ve Yapay Zekâ",
+        "Software Technologies and Artificial Intelligence"
+      ),
+      subtitle: translate(
+        "GEN Academy • Yetenekler: Yazılım Geliştirme, Yapay Zekâ",
+        "GEN Academy • Skills: Software Development, Artificial Intelligence"
+      ),
       image: require("./assets/images/genacademy.webp"),
       imageAlt: "GEN Academy",
       footerLink: [
         {
-          name: "View Certificate",
+          name: translate("Sertifikayı Görüntüle", "View Certificate"),
           url: "https://globallycheck.com/CertificateRepo/GEND7222724.jpg"
         }
       ]
     },
 
     {
-      title: "Yazılım Teknolojileri ve Yapay Zeka",
-      subtitle: "GEN Academy • Yetenekler: Yazılım Geliştirme, Yapay Zeka",
+      title: translate(
+        "Yazılım Teknolojileri ve Yapay Zekâ",
+        "Software Technologies and Artificial Intelligence"
+      ),
+      subtitle: translate(
+        "GEN Academy • Yetenekler: Yazılım Geliştirme, Yapay Zekâ",
+        "GEN Academy • Skills: Software Development, Artificial Intelligence"
+      ),
       image: require("./assets/images/genacademy.webp"),
       imageAlt: "GEN Academy",
       footerLink: [
         {
-          name: "View Certificate",
+          name: translate("Sertifikayı Görüntüle", "View Certificate"),
           url: "https://globallycheck.com/CertificateRepo/GENDDC63ED8.jpg"
         }
       ]
     },
     {
-      title: "Internship Opportunity Summit",
-      subtitle: "Öğrenci Kariyeri • Skills: Digital Marketing",
+      title: translate(
+        "Staj Fırsatları Zirvesi",
+        "Internship Opportunity Summit"
+      ),
+      subtitle: translate(
+        "Öğrenci Kariyeri • Yetenekler: Dijital Pazarlama",
+        "Öğrenci Kariyeri • Skills: Digital Marketing"
+      ),
       image: require("./assets/images/ogrenciKariyeri.webp"),
       imageAlt: "Öğrenci Kariyeri",
       footerLink: [
         {
-          name: "View Certificate",
+          name: translate("Sertifikayı Görüntüle", "View Certificate"),
           url: "https://globallycheck.com/CertificateRepo/ISH2997A5C3.jpg"
         }
       ]
@@ -290,7 +383,7 @@ const achievementSection = {
       imageAlt: "Talentcoders",
       footerLink: [
         {
-          name: "View Certificate",
+          name: translate("Sertifikayı Görüntüle", "View Certificate"),
           url: "https://globallycheck.com/CertificateRepo/DEV44478DB0.jpg"
         }
       ]
@@ -309,15 +402,20 @@ const talkSection = {display: false};
 const podcastSection = {display: false};
 const twitterDetails = {display: false};
 const resumeSection = {
-  title: "Resume",
-  subtitle: "Feel free to download my resume",
+  title: translate("Özgeçmiş", "Resume"),
+  subtitle: translate(
+    "Özgeçmişimi indirebilirsiniz",
+    "Feel free to download my resume"
+  ),
   display: false
 };
 
 const contactInfo = {
-  title: emoji("Contact Me ☎️"),
-  subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
+  title: emoji(translate("İletişime Geçin ☎️", "Contact Me ☎️")),
+  subtitle: translate(
+    "Bir proje hakkında konuşmak ya da sadece merhaba demek mi istiyorsunuz? E-posta kutum herkese açık.",
+    "Would you like to discuss a project or just say hi? My inbox is open to everyone."
+  ),
   email_address: "my@erayefekutlu.com"
 };
 
